@@ -2,19 +2,17 @@ package com.squarepanda.seleniumUtility;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
-
-
 import com.squarepanda.constants.WebDriverGlobalVariables;
 import com.squarepanda.reporting.ExceptionInfo;
-
-
-
 
 public class GenericMethods {
 	
@@ -23,19 +21,19 @@ public class GenericMethods {
 		return SeleniumDriver.getDriver();
 	}
 	 
-	
-	
 	/**
 	 * The method performs to wait driver.
+	 * @return 
 	 */
-	public void waitDriver(int time) {
-	
-		SeleniumDriver.getDriver().manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
+	public  void waitForElement(long time, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(getDriver(), time);
+		 wait.until(ExpectedConditions.elementToBeClickable(element));
 		
 	}
 	public String getPageTitle() {
 		return SeleniumDriver.getDriver().getTitle();
 	}
+	
 	/**
 	 * The method get's the source code of the current screen.
 	 * 
@@ -354,6 +352,147 @@ public class GenericMethods {
 			}
 		}
 	}
+	/**
+	 * The method scans through the list of elements. It checks if the text of the
+	 * element matches the expected text and clicks that element.
+	 * 
+	 * @param loc         the locator the element.
+	 * 
+	 * @param textToMatch the text to match with the element's text.
+	 * 
+	 * @throws throwErrorOnDefaultTimeoutException custom exception stating None of
+	 *                                             the element matched the search
+	 *                                             text.
+	 */
+	public void scanThroughTheListOfElementsAndClick(List<WebElement> elements, String textToMatch) {
+		Reporter.log("Scanning through the list of elements with locator: " + elements + " with text: " + textToMatch
+				+ " to click the element.");
+		setCurrentMillseconds();
+		boolean found = false;
+		while (true) {
+			try {
+				List<WebElement> values = elements;
+				for (WebElement value : values) {
+					if (value.getText().equals(textToMatch)) {
+						found = true;
+						value.click();
+						break;
+					}
+				}
+				if (found == false)
+					throwErrorOnDefaultTimeout(new Exception("Assertion Fail"), elements,
+							"None of the element matched the search text: " + textToMatch);
+				else
+					break;
+			} catch (Exception e) {
+				throwErrorOnDefaultTimeout(new Exception("Assertion Fail"), elements,
+						"None of the element matched the search text: " + textToMatch);
+			}
+		}
+	}
+	/**
+	 * The method asserts values in the list of element contains the expected value
+	 * 
+	 * @param list          the list of elements.
+	 * 
+	 * @param expectedValue expected value.
+	 * 
+	 * @throws throwErrorOnDefaultTimeoutException custom exception stating List
+	 *                                             does not contains the expected
+	 *                                             value.
+	 */
+	public void assertListContainsValue(List<Object> list, Object expectedValue) {
+		Reporter.log("Asserting the list: " + list + " contains the value: " + expectedValue);
+		boolean found = false;
+		setCurrentMillseconds();
+		while (true) {
+			try {
+				for (int i = 0; i < list.size(); i++) {
+					if (list.get(i) instanceof String) {
+						if (list.get(i).equals(expectedValue)) {
+							found = true;
+							break;
+						}
+
+					} else {
+						if (list.get(i) == expectedValue) {
+							found = true;
+							break;
+						}
+					}
+				}
+				if (found == false)
+					throwErrorOnDefaultTimeout(new Exception("Assertion Fail"),
+							"List does not contains the expected value.\nElements in the list: " + list.toString()
+									+ "\nExpected value: " + expectedValue);
+				else
+					break;
+
+			} catch (Exception e) {
+				throwErrorOnDefaultTimeout(new Exception("Assertion Fail"),
+						"List does not contains the expected value.\nElements in the list: " + list.toString()
+								+ "\nExpected value: " + expectedValue);
+			}
+		}
+	}
+
+	/**
+	 * The method asserts values in the list of element does not contain the
+	 * expected value
+	 * 
+	 * @param list          the list of elements.
+	 * 
+	 * @param expectedValue expected value.
+	 * 
+	 * @throws throwErrorOnDefaultTimeoutException custom exception stating List
+	 *                                             contains the expected value.
+	 */
+	public void assertListDoesntContainValue(List<Object> list, Object expectedValue) {
+		Reporter.log("Asserting the list: " + list + " does not contain the value: " + expectedValue);
+		boolean found = false;
+		setCurrentMillseconds();
+		while (true) {
+			try {
+				for (int i = 0; i < list.size(); i++) {
+					if (list.get(i) instanceof String) {
+						if (list.get(i).equals(expectedValue)) {
+							found = true;
+							break;
+						}
+
+					} else {
+						if (list.get(i) == expectedValue) {
+							found = true;
+							break;
+						}
+					}
+				}
+				if (found == true)
+					throwErrorOnDefaultTimeout(new Exception("Assertion Fail"),
+							"List contains the expected value.\nElements in the list: " + list.toString()
+									+ "\nExpected value: " + expectedValue);
+				else
+					break;
+
+			} catch (Exception e) {
+				throwErrorOnDefaultTimeout(new Exception("Assertion Fail"),
+						"List contains the expected value.\nElements in the list: " + list.toString()
+								+ "\nExpected value: " + expectedValue);
+			}
+		}
+	}
+	/**
+	 * The method asserts the element is not present.
+	 * 
+	 * @param loc locator of the element to assert the presence.
+	 * 
+	 */
+	public void assertElementNotPresent(WebElement element) {
+		Reporter.log("Verifying element is not present.");
+		assertValuesEqual(isElementPresent(element), false,
+				"Element with locator"+element+"} is present. However it should not be present.");
+	}
+
 	
 	
 	/*
@@ -438,6 +577,11 @@ public class GenericMethods {
 	}
 
 	private void throwErrorOnDefaultTimeout(Exception e, WebElement element, String customMessage) {
+		if (System.currentTimeMillis() - currentMills > (defaultWaitForTimeout * 1000)) {
+			throw new ExceptionInfo(e, element, customMessage);
+		}
+	}
+	private void throwErrorOnDefaultTimeout(Exception e, List<WebElement> element, String customMessage) {
 		if (System.currentTimeMillis() - currentMills > (defaultWaitForTimeout * 1000)) {
 			throw new ExceptionInfo(e, element, customMessage);
 		}

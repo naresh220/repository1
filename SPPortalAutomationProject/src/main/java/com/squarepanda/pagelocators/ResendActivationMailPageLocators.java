@@ -6,7 +6,7 @@ import org.openqa.selenium.support.How;
 
 import com.squarepanda.seleniumUtility.GenericMethods;
 
-public class ResendActMailPageLocators extends GenericMethods{
+public class ResendActivationMailPageLocators extends GenericMethods{
 	
 	@FindBy(how=How.ID,using="resendLink")
 	public WebElement resendActEmailLink;

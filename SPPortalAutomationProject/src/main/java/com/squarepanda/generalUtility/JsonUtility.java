@@ -17,8 +17,7 @@ import io.restassured.response.Response;
 /**
  * The class includes all the generic functions required for JSON parsing.
  * 
- * @author Zaid Momin
- * @since 26-03-2019
+ *
  */
 public class JsonUtility {
 

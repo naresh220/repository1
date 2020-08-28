@@ -12,83 +12,82 @@ public class PlayersPageStepDefinitions extends BaseClass {
 	@When("^Verify user is on players page$")
 	public void verify_user_is_on_players_page() throws Throwable{
 		try {
-//		   playersPageCoreLogic.verifyPlayersPageTitle();
-			System.out.println("uuieruyfiuby");
+		   playersPageCoreLogic.verifyPlayersPageTitle();	
 		} catch (Exception e) {
 		ErrorReporter.reportError(e);
 	   } 
 	}
-	@Then("^Verify if three players are added and delete one on add player screen$")
-	public void verify_is_three_players_and_added_and_delete_one_on_add_player_screen() throws Throwable {
+	@Then("^Delete all the players on players page$")
+	public void Delete_all_the_players_on_players_page() throws Throwable {
 		try {
+			playersPageCoreLogic.deleteAllPlayers();
+		} catch (Exception e) {
+			ErrorReporter.reportError(e, true);
+		}
+	}
+
+	@Then("^User clicks on add player button on players page$")
+	public void user_clicks_on_add_player_button_on_players_page() throws Throwable {
+		try {
+			playersPageCoreLogic.clickOnAddPlayerButton();
+		} catch (Exception e) {
+			ErrorReporter.reportError(e, true);
+		}
+	}
+
+	@Then("^Verify user creates a player on players page$")
+	public void user_creates_a_player_on_players_page() throws Throwable {
+		try {
+			playersPageCoreLogic.addPlayer("createPlayer", "18", "Male");
+		} catch (Exception e) {
+			ErrorReporter.reportError(e, true);
+		}
+	}
+
+	@Then("User delete the player on players page")
+	public void user_delete_the_player_on_players_page() throws Throwable {
+		try {
+			playersPageCoreLogic.deletePlayer();
 			
 		} catch (Exception e) {
 			ErrorReporter.reportError(e, true);
 		}
 	}
 
-	@Then("^Verify user can add maximum of three players on add player screen$")
-	public void verify_user_can_add_maximum_of_three_players_on_add_player_screen() throws Throwable {
+	@Then("^User clicks on edit player button on players page$")
+	public void user_clicks_on_edit_player_button_on_players_page() throws Throwable {
 		try {
-			
+			playersPageCoreLogic.clickOnEditButton();
 		} catch (Exception e) {
 			ErrorReporter.reportError(e, true);
 		}
 	}
 
-	@Then("^User clicks add player button on player page$")
-	public void user_clicks_add_player_button_on_player_page() throws Throwable {
+	@Then("^User edits the player on players page$")
+	public void user_edits_the_player_on_players_page() throws Throwable {
 		try {
-			
+			playersPageCoreLogic.editPlayer("upDatePlayer", "10", "Female");
 		} catch (Exception e) {
 			ErrorReporter.reportError(e, true);
 		}
 	}
 
-	@Then("User creates a player \"([^\"]*)\" information on add player page")
-	public void user_adds_a_player_on_add_player_screen_on_add_player_page(String missingInput) throws Throwable {
+	@Then("^Verify player updated on players page$")
+	public void verify_player_updated_on_players_page() throws Throwable {
 		try {
-			
-			
+			playersPageCoreLogic.verifyPlayerAdded("upDatePlayer");
 		} catch (Exception e) {
 			ErrorReporter.reportError(e, true);
 		}
 	}
 
-	@Then("^Verify player added on add player screen$")
-	public void verify_player_added_on_add_player_screen() throws Throwable {
+	@Then("^Verify user can creates three players on players page")
+	public void verify_user_can_creates_three_players_on_players_page() throws Throwable {
 		try {
-			
+			playersPageCoreLogic.verifyMaxThreePlayersCanBeAdded("playerName", "10", "Male");
 		} catch (Exception e) {
 			ErrorReporter.reportError(e, true);
-		}
-	}
-
-	@Then("^User clicks on newly created player on add player page$")
-	public void user_clicks_on_newly_created_player_on_add_player_page() throws Throwable {
-		try {
-			
-		} catch (Exception e) {
-			ErrorReporter.reportError(e, true);
-		}
-	}
-
-	@Then("^User clicks on a player on add player screen$")
-	public void user_clicks_on_a_player_on_add_player_screen() throws Throwable {
-		try {
-			
-		} catch (Exception e) {
-			ErrorReporter.reportError(e, true);
-		}
-	}
-
-	@Then("^User edits the player \"([^\"]*)\" information on add player page$")
-	public void user_edits_the_player_on_add_player_page(String missingInformation) throws Throwable {
-		try {
-			
-		} catch (Exception e) {
-			ErrorReporter.reportError(e, true);
-		}
+		} 
 	}
 
 	@Then("^Verify player updated on add player page$")

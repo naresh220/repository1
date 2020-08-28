@@ -1,5 +1,7 @@
 package com.squarepanda.reporting;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 
 
@@ -14,6 +16,7 @@ public class ExceptionInfo extends RuntimeException {
 	 */
 	private static final long serialVersionUID = -3387516993124229948L;
 	private WebElement element;
+	List<WebElement> elements;
 	private String customMessage;
 	private String assertionType;
 	private Object actualValue;
@@ -37,6 +40,11 @@ public class ExceptionInfo extends RuntimeException {
 	public ExceptionInfo(Exception e, WebElement element, String customMessage) {
 		this.exception = e;
 		this.element = element;
+		this.customMessage = customMessage;
+	}
+	public ExceptionInfo(Exception e,List<WebElement> elements, String customMessage) {
+		this.exception = e;
+		this.elements = elements;
 		this.customMessage = customMessage;
 	}
 

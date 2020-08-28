@@ -16,13 +16,13 @@ import cucumber.api.testng.TestNGCucumberRunner;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/Features/LoginPage.feature",
+@CucumberOptions(features = "src/test/resources/Features/ForgotPasswordPage.feature",
 		glue = "com.squarepanda.stepdefinitions",
-		tags = "@SPRegression",
         plugin =  {
         		"pretty:target/executionReport/cucumber-pretty.txt",
         		"html:target/executionReport/cucumber.html",
         		"json:target/executionReport/cucumber.json"},
+//        tags= {"@forgot"},
         monochrome=true,
         dryRun=false
         )
@@ -32,10 +32,10 @@ public class TestRunner1{
 	private static TestNGCucumberRunner testNGCucumberRunner;
 	static BaseClass baseClass = new BaseClass();
 
-//	@BeforeClass
-//	public static void setUpClass() {
-//		baseClass.setup();
-//		}
+	@BeforeClass
+	public static void setUpClass() {
+		baseClass.setup();
+		}
 	@Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
 	public static void feature(CucumberFeatureWrapper cucumberFeature) throws ParseException {
 		 featureName = cucumberFeature.getCucumberFeature().getPath();
@@ -48,12 +48,12 @@ public class TestRunner1{
 //		testNGCucumberRunner.finish();
 //		GenerateReport.generateReport(com.squarepanda.generalUtility.LoadProperties.getProjectProperities("projectName"), "target/executionReport");
 //		TestRailIntegrator.updateResultToTestRail("target/executionReport", "cucumber.json");
-
+//
 //	}
-//	@AfterTest(alwaysRun = true)
-//	public void terminateApp() {
-//		baseClass.tearDown();
-//	}
+	@AfterTest(alwaysRun = true)
+	public void terminateApp() {
+		baseClass.tearDown();
+	}
 
 	public static String getFeatureName() {
 		return featureName;

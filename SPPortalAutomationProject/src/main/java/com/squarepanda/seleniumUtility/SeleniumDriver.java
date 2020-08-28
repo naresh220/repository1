@@ -3,11 +3,6 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-//import org.openqa.selenium.support.ui.WebDriverWait;
-
-
-
-
 public class SeleniumDriver {
 	
 	private static SeleniumDriver seleniumDriver;
@@ -32,16 +27,20 @@ public class SeleniumDriver {
 //        System.out.println("Window ->"+window);
 //       
 //    }
-
-    public static void openPage(String url) {
+    public static void launchBrowser() {
     	System.setProperty("webdriver.chrome.driver", "/Users/Naresh/Downloads/chromedriver.exe");
     	driver = new ChromeDriver();
-    	System.out.println(url);
     	System.out.println(driver);
-        driver.get(url);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
-        System.out.println("loaded"); 
+        System.out.println("loaded");
+    	
+    }
+
+    public static void openPage(String url) {
+    	launchBrowser();
+    	System.out.println(url);
+    	driver.get(url);
         
     }
 

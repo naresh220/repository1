@@ -24,7 +24,7 @@ public class WebDriverGlobalVariables {
 	 * Should only be used in test driver and set from AutomationHooks or property
 	 * file
 	 */
-	public static int defaultWaitForTimeout = 40;
+	public static int defaultWaitForTimeout = 10;
 
 	public static int defaultWaitTimeOutApi = 1;
 	/**
