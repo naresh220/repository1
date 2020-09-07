@@ -15,7 +15,7 @@ public class UsWebsiteBaseClass {
 		public static WebsiteCoreLogic websiteCoreLogic;
 		
 		public void setup() {
-			SeleniumDriver.openPage(LoadProperties.getProjectProperities("USWebsiteUrl"));
+			SeleniumDriver.launchBrowser();
 			instantiateHelpers();
 			}
 			

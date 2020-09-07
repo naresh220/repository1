@@ -16,7 +16,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/Features/ForgotPasswordPage.feature",
+@CucumberOptions(features = "src/test/resources/Features/ResendActivationMailPage.feature",
 		glue = "com.squarepanda.stepdefinitions",
         plugin =  {
         		"pretty:target/executionReport/cucumber-pretty.txt",

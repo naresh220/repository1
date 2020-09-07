@@ -11,7 +11,7 @@ public class ResendActivationMailPageLocators extends GenericMethods{
 	@FindBy(how=How.ID,using="resendLink")
 	public WebElement resendActEmailLink;
 	@FindBy(how=How.XPATH,using="//h1[@class='authHeader']")
-	public WebElement resendActMailPopup;
+	public WebElement resendActMailPopupHeader;
 	@FindBy(how=How.XPATH,using="//p[@class='textLink']")
 	public WebElement backToLogin;
 	@FindBy(how=How.ID,using="//input[@class='sqpInputBox ng-untouched ng-pristine ng-invalid']")

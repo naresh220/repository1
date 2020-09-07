@@ -28,7 +28,7 @@ public class SeleniumDriver {
 //       
 //    }
     public static void launchBrowser() {
-    	System.setProperty("webdriver.chrome.driver", "/Users/Naresh/Downloads/chromedriver.exe");
+    	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Naresh\\Downloads\\chromedriver_v85\\chromedriver.exe");
     	driver = new ChromeDriver();
     	System.out.println(driver);
         driver.manage().window().maximize();

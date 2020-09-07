@@ -1,20 +1,20 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/Features/ForgotPasswordPage.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/Features/ResendActivationMailPage.feature");
 formatter.feature({
   "line": 1,
-  "name": "Tests and verifies all the Forgot password  page flows.",
+  "name": "Tests and verifies all the resend activation mail page flows.",
   "description": "",
-  "id": "tests-and-verifies-all-the-forgot-password--page-flows.",
+  "id": "tests-and-verifies-all-the-resend-activation-mail-page-flows.",
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 562200,
+  "duration": 401000,
   "status": "passed"
 });
 formatter.scenario({
   "line": 3,
   "name": "Verify each element on the Forgot password screen.",
   "description": "",
-  "id": "tests-and-verifies-all-the-forgot-password--page-flows.;verify-each-element-on-the-forgot-password-screen.",
+  "id": "tests-and-verifies-all-the-resend-activation-mail-page-flows.;verify-each-element-on-the-forgot-password-screen.",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
@@ -31,44 +31,43 @@ formatter.step({
 });
 formatter.step({
   "line": 5,
-  "name": "User redirects to forgot password page",
+  "name": "User redirects to resend activation email page",
   "keyword": "Then "
 });
 formatter.step({
   "line": 6,
-  "name": "Verify Forgot password page",
+  "name": "Verify resend activation email page",
   "keyword": "Then "
 });
 formatter.match({
   "location": "LoginPageStepDefinitions.verify_user_is_on_login_page_of_website()"
 });
 formatter.result({
-  "duration": 90637421700,
-  "status": "passed"
+  "duration": 59802962200,
+  "error_message": "java.lang.Exception: \nException Stack Trace    :  org.openqa.selenium.NoSuchWindowException: no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome\u003d85.0.4183.83)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027LAPTOP-G6GITERP\u0027, ip: \u0027192.168.43.19\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_211\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\\Users\\Naresh\\AppData\\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55991}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 5e6381650b5e7da6af2ad85c80bf9589\n*** Element info: {Using\u003dxpath, value\u003d//h1[@class\u003d\u0027authTitle\u0027]}\r\n\tat sun.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown \r\n\tat com.squarepanda.reporting.ErrorReporter.createErrorMapAndThrowException(ErrorReporter.java:112)\r\n\tat com.squarepanda.reporting.ErrorReporter.reportError(ErrorReporter.java:26)\r\n\tat com.squarepanda.stepdefinitions.LoginPageStepDefinitions.verify_user_is_on_login_page_of_website(LoginPageStepDefinitions.java:29)\r\n\tat ✽.Given User is on login page of website(src/test/resources/Features/ResendActivationMailPage.feature:4)\r\n",
+  "status": "failed"
 });
 formatter.match({
-  "location": "ForgotPasswordPageStepDefinitions.user_redirects_to_forgot_password_page()"
+  "location": "ResendActivationMailPageStepDefinitions.user_redirects_to_resend_activation_email_page()"
 });
 formatter.result({
-  "duration": 185698200,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
-  "location": "ForgotPasswordPageStepDefinitions.verify_Forgot_password_page()"
+  "location": "ResendActivationMailPageStepDefinitions.verify_resend_activation_email_page()"
 });
 formatter.result({
-  "duration": 294337700,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.before({
-  "duration": 193600,
+  "duration": 297500,
   "status": "passed"
 });
 formatter.scenario({
   "line": 9,
-  "name": "Verify the back to login link on the Forgot password screen.",
+  "name": "Verify the back to login link on the Resend Activation email screen.",
   "description": "",
-  "id": "tests-and-verifies-all-the-forgot-password--page-flows.;verify-the-back-to-login-link-on-the-forgot-password-screen.",
+  "id": "tests-and-verifies-all-the-resend-activation-mail-page-flows.;verify-the-back-to-login-link-on-the-resend-activation-email-screen.",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
@@ -89,12 +88,12 @@ formatter.step({
 });
 formatter.step({
   "line": 11,
-  "name": "User redirects to forgot password page",
+  "name": "User redirects to resend activation email page",
   "keyword": "Then "
 });
 formatter.step({
   "line": 12,
-  "name": "User clicks on back to login link",
+  "name": "User clicks on back to login link on resend activation email",
   "keyword": "Then "
 });
 formatter.step({
@@ -106,35 +105,33 @@ formatter.match({
   "location": "LoginPageStepDefinitions.verify_user_is_on_login_page_of_website()"
 });
 formatter.result({
-  "duration": 231206000,
-  "status": "passed"
+  "duration": 5778600,
+  "error_message": "java.lang.Exception: \nException Stack Trace    :  org.openqa.selenium.NoSuchWindowException: no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome\u003d85.0.4183.83)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027LAPTOP-G6GITERP\u0027, ip: \u0027192.168.43.19\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_211\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\\Users\\Naresh\\AppData\\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55991}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 5e6381650b5e7da6af2ad85c80bf9589\r\n\tat sun.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown S\r\n\tat com.squarepanda.reporting.ErrorReporter.createErrorMapAndThrowException(ErrorReporter.java:112)\r\n\tat com.squarepanda.reporting.ErrorReporter.reportError(ErrorReporter.java:26)\r\n\tat com.squarepanda.stepdefinitions.LoginPageStepDefinitions.verify_user_is_on_login_page_of_website(LoginPageStepDefinitions.java:29)\r\n\tat ✽.Given User is on login page of website(src/test/resources/Features/ResendActivationMailPage.feature:10)\r\n",
+  "status": "failed"
 });
 formatter.match({
-  "location": "ForgotPasswordPageStepDefinitions.user_redirects_to_forgot_password_page()"
+  "location": "ResendActivationMailPageStepDefinitions.user_redirects_to_resend_activation_email_page()"
 });
 formatter.result({
-  "duration": 124124000,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
-  "location": "ForgotPasswordPageStepDefinitions.user_clicks_on_back_to_login_link()"
+  "location": "ResendActivationMailPageStepDefinitions.user_clicks_on_back_to_login_link()"
 });
 formatter.result({
-  "duration": 129651200,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "LoginPageStepDefinitions.verify_login_page()"
 });
 formatter.result({
-  "duration": 525749900,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.scenarioOutline({
   "line": 16,
-  "name": "Verify the forgot password functionality",
+  "name": "Verify the Resend Activation email functionality",
   "description": "",
-  "id": "tests-and-verifies-all-the-forgot-password--page-flows.;verify-the-forgot-password-functionality",
+  "id": "tests-and-verifies-all-the-resend-activation-mail-page-flows.;verify-the-resend-activation-email-functionality",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
@@ -151,7 +148,7 @@ formatter.step({
 });
 formatter.step({
   "line": 18,
-  "name": "User requests password for \u003cemail\u003e",
+  "name": "User recovers account \u003cemail\u003e",
   "keyword": "Then "
 });
 formatter.step({
@@ -168,7 +165,7 @@ formatter.examples({
   "line": 22,
   "name": "",
   "description": "",
-  "id": "tests-and-verifies-all-the-forgot-password--page-flows.;verify-the-forgot-password-functionality;",
+  "id": "tests-and-verifies-all-the-resend-activation-mail-page-flows.;verify-the-resend-activation-email-functionality;",
   "rows": [
     {
       "cells": [
@@ -176,7 +173,7 @@ formatter.examples({
         "notification"
       ],
       "line": 23,
-      "id": "tests-and-verifies-all-the-forgot-password--page-flows.;verify-the-forgot-password-functionality;;1"
+      "id": "tests-and-verifies-all-the-resend-activation-mail-page-flows.;verify-the-resend-activation-email-functionality;;1"
     },
     {
       "cells": [
@@ -184,20 +181,20 @@ formatter.examples({
         "Email has been sent"
       ],
       "line": 24,
-      "id": "tests-and-verifies-all-the-forgot-password--page-flows.;verify-the-forgot-password-functionality;;2"
+      "id": "tests-and-verifies-all-the-resend-activation-mail-page-flows.;verify-the-resend-activation-email-functionality;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 149600,
+  "duration": 138300,
   "status": "passed"
 });
 formatter.scenario({
   "line": 24,
-  "name": "Verify the forgot password functionality",
+  "name": "Verify the Resend Activation email functionality",
   "description": "",
-  "id": "tests-and-verifies-all-the-forgot-password--page-flows.;verify-the-forgot-password-functionality;;2",
+  "id": "tests-and-verifies-all-the-resend-activation-mail-page-flows.;verify-the-resend-activation-email-functionality;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
@@ -214,7 +211,7 @@ formatter.step({
 });
 formatter.step({
   "line": 18,
-  "name": "User requests password for naresh@squarepanda.com",
+  "name": "User recovers account naresh@squarepanda.com",
   "matchedColumns": [
     0
   ],
@@ -237,21 +234,21 @@ formatter.match({
   "location": "LoginPageStepDefinitions.verify_user_is_on_login_page_of_website()"
 });
 formatter.result({
-  "duration": 90280117200,
-  "status": "passed"
+  "duration": 3158500,
+  "error_message": "java.lang.Exception: \nException Stack Trace    :  org.openqa.selenium.NoSuchWindowException: no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome\u003d85.0.4183.83)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027LAPTOP-G6GITERP\u0027, ip: \u0027192.168.43.19\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_211\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\\Users\\Naresh\\AppData\\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55991}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 5e6381650b5e7da6af2ad85c80bf9589\r\n\tat sun.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown S\r\n\tat com.squarepanda.reporting.ErrorReporter.createErrorMapAndThrowException(ErrorReporter.java:112)\r\n\tat com.squarepanda.reporting.ErrorReporter.reportError(ErrorReporter.java:26)\r\n\tat com.squarepanda.stepdefinitions.LoginPageStepDefinitions.verify_user_is_on_login_page_of_website(LoginPageStepDefinitions.java:29)\r\n\tat ✽.Given User is on login page of website(src/test/resources/Features/ResendActivationMailPage.feature:17)\r\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
     {
       "val": "naresh@squarepanda.com",
-      "offset": 27
+      "offset": 22
     }
   ],
-  "location": "ForgotPasswordPageStepDefinitions.user_requests_password_for_email(String)"
+  "location": "ResendActivationMailPageStepDefinitions.user_recovers_account(String)"
 });
 formatter.result({
-  "duration": 618567400,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -263,14 +260,12 @@ formatter.match({
   "location": "LoginPageStepDefinitions.verify_user_gets_success_message(String)"
 });
 formatter.result({
-  "duration": 1802247100,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "location": "LoginPageStepDefinitions.verify_login_page()"
 });
 formatter.result({
-  "duration": 493855900,
-  "status": "passed"
+  "status": "skipped"
 });
 });

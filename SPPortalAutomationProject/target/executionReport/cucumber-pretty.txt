@@ -1,30 +1,81 @@
-Feature: Tests and verifies all the Forgot password  page flows.
+Feature: Tests and verifies all the resend activation mail page flows.
 
   @SPRegression
-  Scenario: Verify each element on the Forgot password screen. # src/test/resources/Features/ForgotPasswordPage.feature:3
+  Scenario: Verify each element on the Forgot password screen. # src/test/resources/Features/ResendActivationMailPage.feature:3
     Given User is on login page of website                     # LoginPageStepDefinitions.verify_user_is_on_login_page_of_website()
-    Then User redirects to forgot password page                # ForgotPasswordPageStepDefinitions.user_redirects_to_forgot_password_page()
-    Then Verify Forgot password page                           # ForgotPasswordPageStepDefinitions.verify_Forgot_password_page()
+      java.lang.Exception: 
+      Exception Stack Trace    :  org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+      from unknown error: web view not found
+        (Session info: chrome=85.0.4183.83)
+      Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+      System info: host: 'LAPTOP-G6GITERP', ip: '192.168.43.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+      Driver info: org.openqa.selenium.chrome.ChromeDriver
+      Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Naresh\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55991}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+      Session ID: 5e6381650b5e7da6af2ad85c80bf9589
+      *** Element info: {Using=xpath, value=//h1[@class='authTitle']}
+      	at sun.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
+      	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown 
+      	at com.squarepanda.reporting.ErrorReporter.createErrorMapAndThrowException(ErrorReporter.java:112)
+      	at com.squarepanda.reporting.ErrorReporter.reportError(ErrorReporter.java:26)
+      	at com.squarepanda.stepdefinitions.LoginPageStepDefinitions.verify_user_is_on_login_page_of_website(LoginPageStepDefinitions.java:29)
+      	at ✽.Given User is on login page of website(src/test/resources/Features/ResendActivationMailPage.feature:4)
+
+    Then User redirects to resend activation email page        # ResendActivationMailPageStepDefinitions.user_redirects_to_resend_activation_email_page()
+    Then Verify resend activation email page                   # ResendActivationMailPageStepDefinitions.verify_resend_activation_email_page()
 
   @SPRegression @forgot
-  Scenario: Verify the back to login link on the Forgot password screen. # src/test/resources/Features/ForgotPasswordPage.feature:9
-    Given User is on login page of website                               # LoginPageStepDefinitions.verify_user_is_on_login_page_of_website()
-    Then User redirects to forgot password page                          # ForgotPasswordPageStepDefinitions.user_redirects_to_forgot_password_page()
-    Then User clicks on back to login link                               # ForgotPasswordPageStepDefinitions.user_clicks_on_back_to_login_link()
-    Then Verify login page                                               # LoginPageStepDefinitions.verify_login_page()
+  Scenario: Verify the back to login link on the Resend Activation email screen. # src/test/resources/Features/ResendActivationMailPage.feature:9
+    Given User is on login page of website                                       # LoginPageStepDefinitions.verify_user_is_on_login_page_of_website()
+      java.lang.Exception: 
+      Exception Stack Trace    :  org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+      from unknown error: web view not found
+        (Session info: chrome=85.0.4183.83)
+      Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+      System info: host: 'LAPTOP-G6GITERP', ip: '192.168.43.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+      Driver info: org.openqa.selenium.chrome.ChromeDriver
+      Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Naresh\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55991}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+      Session ID: 5e6381650b5e7da6af2ad85c80bf9589
+      	at sun.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
+      	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+      	at java.lang.reflect.Constructor.newInstance(Unknown S
+      	at com.squarepanda.reporting.ErrorReporter.createErrorMapAndThrowException(ErrorReporter.java:112)
+      	at com.squarepanda.reporting.ErrorReporter.reportError(ErrorReporter.java:26)
+      	at com.squarepanda.stepdefinitions.LoginPageStepDefinitions.verify_user_is_on_login_page_of_website(LoginPageStepDefinitions.java:29)
+      	at ✽.Given User is on login page of website(src/test/resources/Features/ResendActivationMailPage.feature:10)
+
+    Then User redirects to resend activation email page                          # ResendActivationMailPageStepDefinitions.user_redirects_to_resend_activation_email_page()
+    Then User clicks on back to login link on resend activation email            # ResendActivationMailPageStepDefinitions.user_clicks_on_back_to_login_link()
+    Then Verify login page                                                       # LoginPageStepDefinitions.verify_login_page()
 
   @SPRegression
-  Scenario Outline: Verify the forgot password functionality  # src/test/resources/Features/ForgotPasswordPage.feature:16
+  Scenario Outline: Verify the Resend Activation email functionality # src/test/resources/Features/ResendActivationMailPage.feature:16
     Given User is on login page of website
-    Then User requests password for <email>
+    Then User recovers account <email>
     Then Verify user gets success notification <notification>
     Then Verify login page
 
     Examples: 
 
   @SPRegression
-  Scenario Outline: Verify the forgot password functionality       # src/test/resources/Features/ForgotPasswordPage.feature:24
-    Given User is on login page of website                         # LoginPageStepDefinitions.verify_user_is_on_login_page_of_website()
-    Then User requests password for naresh@squarepanda.com         # ForgotPasswordPageStepDefinitions.user_requests_password_for_email(String)
-    Then Verify user gets success notification Email has been sent # LoginPageStepDefinitions.verify_user_gets_success_message(String)
-    Then Verify login page                                         # LoginPageStepDefinitions.verify_login_page()
+  Scenario Outline: Verify the Resend Activation email functionality # src/test/resources/Features/ResendActivationMailPage.feature:24
+    Given User is on login page of website                           # LoginPageStepDefinitions.verify_user_is_on_login_page_of_website()
+      java.lang.Exception: 
+      Exception Stack Trace    :  org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+      from unknown error: web view not found
+        (Session info: chrome=85.0.4183.83)
+      Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+      System info: host: 'LAPTOP-G6GITERP', ip: '192.168.43.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+      Driver info: org.openqa.selenium.chrome.ChromeDriver
+      Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.83, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Naresh\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55991}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+      Session ID: 5e6381650b5e7da6af2ad85c80bf9589
+      	at sun.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
+      	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+      	at java.lang.reflect.Constructor.newInstance(Unknown S
+      	at com.squarepanda.reporting.ErrorReporter.createErrorMapAndThrowException(ErrorReporter.java:112)
+      	at com.squarepanda.reporting.ErrorReporter.reportError(ErrorReporter.java:26)
+      	at com.squarepanda.stepdefinitions.LoginPageStepDefinitions.verify_user_is_on_login_page_of_website(LoginPageStepDefinitions.java:29)
+      	at ✽.Given User is on login page of website(src/test/resources/Features/ResendActivationMailPage.feature:17)
+
+    Then User recovers account naresh@squarepanda.com                # ResendActivationMailPageStepDefinitions.user_recovers_account(String)
+    Then Verify user gets success notification Email has been sent   # LoginPageStepDefinitions.verify_user_gets_success_message(String)
+    Then Verify login page                                           # LoginPageStepDefinitions.verify_login_page()

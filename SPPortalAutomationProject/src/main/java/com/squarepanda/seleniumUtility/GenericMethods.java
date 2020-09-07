@@ -3,8 +3,10 @@ package com.squarepanda.seleniumUtility;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,11 +18,26 @@ import com.squarepanda.reporting.ExceptionInfo;
 
 public class GenericMethods {
 	
-	public WebDriver getDriver() {
+	public   WebDriver getDriver() {
 		Reporter.log("Getting the web driver.");
 		return SeleniumDriver.getDriver();
 	}
-	 
+	
+	public  void openPage(String url) {
+   
+		getDriver().get(url);
+        
+    }
+	public void switchTab(int tabNum) {
+		Set<String> tab_handles = getDriver().getWindowHandles();
+//	    int number_of_tabs = tab_handles.size();
+//	    int new_tab_index = number_of_tabs-1;
+	    getDriver().switchTo().window(tab_handles.toArray()[tabNum].toString()); 
+	}
+	 public void closeTab() {
+		 JavascriptExecutor js = (JavascriptExecutor)getDriver();		
+		 js.executeScript("window.close();");
+	 }
 	/**
 	 * The method performs to wait driver.
 	 * @return 

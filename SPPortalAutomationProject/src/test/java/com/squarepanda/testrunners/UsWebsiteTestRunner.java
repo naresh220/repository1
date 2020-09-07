@@ -19,7 +19,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
         		"pretty:target/executionReport/cucumber-pretty.txt",
         		"html:target/executionReport/cucumber.html",
         		"json:target/executionReport/cucumber.json"},
-//        tags= {"@tag2"},
+//        tags= {"@ttt"},
         monochrome=true,
         dryRun=false
         )

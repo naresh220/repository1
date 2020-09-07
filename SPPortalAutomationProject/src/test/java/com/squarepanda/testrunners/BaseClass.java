@@ -6,6 +6,7 @@ import com.squarepanda.pagecorelogic.ForgotPasswordPageCoreLogic;
 import com.squarepanda.pagecorelogic.LoginPageCoreLogic;
 import com.squarepanda.pagecorelogic.PlayersPageCoreLogic;
 import com.squarepanda.pagecorelogic.RegistrationPageCoreLogic;
+import com.squarepanda.pagecorelogic.ResendActivationMailPageCoreLogic;
 import com.squarepanda.seleniumUtility.SeleniumDriver;
 
 public class BaseClass {
@@ -15,6 +16,7 @@ public class BaseClass {
 	public static PlayersPageCoreLogic playersPageCoreLogic;
 	public static ForgotPasswordPageCoreLogic forgotPasswordPageCoreLogic;
 	public static RegistrationPageCoreLogic registrationPageCoreLogic;
+	public static ResendActivationMailPageCoreLogic resendActivationMailPageCoreLogic;
 	public void setup() {
 		SeleniumDriver.openPage(LoadProperties.getProjectProperities("url"));
 		instantiateHelpers();
@@ -27,6 +29,7 @@ public class BaseClass {
 		playersPageCoreLogic= new PlayersPageCoreLogic();
 		forgotPasswordPageCoreLogic= new ForgotPasswordPageCoreLogic();
 		registrationPageCoreLogic = new RegistrationPageCoreLogic();
+		resendActivationMailPageCoreLogic = new ResendActivationMailPageCoreLogic();
 	
 	}
 	
